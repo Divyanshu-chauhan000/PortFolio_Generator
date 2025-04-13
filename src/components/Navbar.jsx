@@ -1,27 +1,54 @@
-import React from 'react'
+import React, { useContext } from 'react'
+
+import { NavLink } from 'react-router-dom';
 import { FaArrowCircleRight } from "react-icons/fa";
 import logo from '../assets/logo.png'
+import Button from './Button';
+import MouseTrail from '../components/cursor';
+import { Authcontext } from '../contexts/AuthContext';
 const Navbar = () => {
+ const {isAuth , logout} = useContext(Authcontext)
   return (
     <div>
-      <nav className='bg-primary flex justify-between items-center  p-2  px-8 text-white'>
+      <MouseTrail/>
+      <nav className='bg-purple-600 flex justify-between items-center  p-2  px-8 text-white'>
         <div >
           <img src={logo} width={120} alt="" />
         </div>
         <div>
-          <ul className='flex space-x-6'>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Examples</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Learn</a></li>
-            <li><a href="#">Contact</a></li>
+          <ul className='flex space-x-6 text-peach font-semibold'>
+            <NavLink className={({isActive})=>`relative text-white hover:text-yellow-300 transition duration-300 
+                after:content-[''] after:absolute  after:bottom-0 after:h-1 
+                after:bg-[#FFCBA4] after:transition-all after:duration-300 after:ease-in-out 
+                ${isActive ? "after:w-full after:left-0" : "after:w-0 hover:after:w-full after:left-1/2 hover:after:left-0"}`
+              }     to="/">Home</NavLink>
+            <NavLink className={({isActive})=>`relative text-white hover:text-yellow-300 transition duration-300 
+                after:content-[''] after:absolute  after:bottom-0 after:h-1 
+                after:bg-[#FFCBA4] after:transition-all after:duration-300 after:ease-in-out 
+                ${isActive ? "after:w-full after:left-0" : "after:w-0 hover:after:w-full after:left-1/2 hover:after:left-0"}`
+                } to="/examples">GitHub PortFolios</NavLink>
+            <NavLink className={({isActive})=>`relative text-white hover:text-yellow-300 transition duration-300 
+                after:content-[''] after:absolute  after:bottom-0 after:h-1 
+                after:bg-[#FFCBA4] after:transition-all after:duration-300 after:ease-in-out 
+                ${isActive ? "after:w-full after:left-0" : "after:w-0 hover:after:w-full after:left-1/2 hover:after:left-0"}`
+              } to="pricing">Pricing</NavLink>
+            <NavLink className={({isActive})=>`relative text-white hover:text-yellow-300 transition duration-300 
+                after:content-[''] after:absolute  after:bottom-0 after:h-1 
+                after:bg-[#FFCBA4] after:transition-all after:duration-300 after:ease-in-out 
+                ${isActive ? "after:w-full after:left-0" : "after:w-0 hover:after:w-full after:left-1/2 hover:after:left-0"
+              }`} to="learn">Learn</NavLink>
+            <NavLink className={({isActive})=>`relative text-white hover:text-yellow-300 transition duration-300 
+                after:content-[''] after:absolute  after:bottom-0 after:h-1 
+                after:bg-[#FFCBA4] after:transition-all after:duration-300 after:ease-in-out 
+                ${isActive ? "after:w-full after:left-0" : "after:w-0 hover:after:w-full after:left-1/2 hover:after:left-0"}`
+              } to="contact">Contact</NavLink>
           </ul>
         </div>
         <div className='flex space-x-6 items-center'>
         <ul>
-            <li><a href="#">Login</a></li>
+            {isAuth ? (<NavLink to="/login"><Button text="Login" /></NavLink>):(<Button text="Logout" onClick={logout}/>)}
         </ul>
-            <button className='bg-blue-700 p-2 flex items-center gap-2'>Create Your Own Portfolio <FaArrowCircleRight /></button>
+            <NavLink to='/create'><Button text="Create Your PortFolio" icon={<FaArrowCircleRight/>}/></NavLink>
         </div>
       </nav>
     </div>
@@ -29,3 +56,4 @@ const Navbar = () => {
 }
 
 export default Navbar
+// Create Your Own Portfolio <FaArrowCircleRight />

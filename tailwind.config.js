@@ -12,8 +12,12 @@ export default {
         accent: "#F9A826", // Warm Yellow-Orange
         background: "#F8F9FA", // Soft White
         text: "#1A1A1A", // Deep Black
+        lightpuple: "#E9A5F1",
+        peach: '#FED2E2', // Soft peach color
+        
       },
     },
   },
   plugins: [],
 }
+
