@@ -83,9 +83,9 @@ const HeroSection = () => {
         className="relative bg-cover bg-bottom m-[2vw] rounded-[25px] shadow-lg overflow-hidden"
         // style={{ backgroundImage: "url(https://picsum.photos/id/103/1900/900)" }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-lightpurple"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-blue-400"></div>
         <svg
-          className="hero-diagonal absolute bottom-[-0.5px] w-full h-[12vw] fill-gray-900"
+          className="hero-diagonal absolute bottom-[-0.5px] w-full h-[12vw] fill-white"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
@@ -93,12 +93,12 @@ const HeroSection = () => {
           <polygon points="0,100 100,0 100,100"></polygon>
         </svg>
         <main className="relative p-16 pt-[10vw] pb-[10vw] text-center flex flex-col items-center justify-center">
-          <h1 className="text-4xl font-thin max-w-xl mx-auto text-gray-900 leading-relaxed tracking-widest uppercase mb-16">
-            Build Your Own <br /> <span className="font-semibold">
+          <h1 className="text-4xl font-thin max-w-xl mx-auto text-white leading-relaxed tracking-widest uppercase mb-16">
+            Build Your Own <br /> <span className="font-semibold text-accent">
             Portfolio
             </span>
           </h1>
-          <p className="pt-0 text-xl font-thin max-w-xl mx-auto text-gray-900 leading-relaxed tracking-widest mb-16">
+          <p className="pt-0 text-xl font-light max-w-xl mx-auto text-white leading-relaxed tracking-widest mb-16">
             Create a stunning portfolio website with ease. <br /> Showcase your work, skills, and personality in a beautiful way.
             <br /> Start your journey today and let your creativity shine.
           </p>

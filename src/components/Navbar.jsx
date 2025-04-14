@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <div>
       <MouseTrail/>
-      <nav className='bg-purple-600 flex justify-between items-center  p-2  px-8 text-white'>
+      <nav className='bg-indigo-600 flex justify-between items-center  p-4  px-8 text-white'>
         <div >
           <img src={logo} width={120} alt="" />
         </div>
@@ -46,7 +46,13 @@ const Navbar = () => {
         </div>
         <div className='flex space-x-6 items-center'>
         <ul>
-            {isAuth ? (<NavLink to="/login"><Button text="Login" /></NavLink>):(<Button text="Logout" onClick={logout}/>)}
+        {isAuth ? (
+      <Button text="Logout" onClick={logout} />
+    ) : (
+      <NavLink to="/login">
+        <Button text="Login" />
+      </NavLink>
+    )}
         </ul>
             <NavLink to='/create'><Button text="Create Your PortFolio" icon={<FaArrowCircleRight/>}/></NavLink>
         </div>
